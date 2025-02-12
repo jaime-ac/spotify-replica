@@ -1,0 +1,20 @@
+/* Main */
+.main{
+    padding: 20px;
+    margin: 0 10px 10px;
+    border-radius: 15px;
+    /* aqui eu tou pedindo para o main pegar o restante do espaço disponível no meu root, tirando apenas o header */
+    flex: 1; 
+    /* colocar uma cor gradiente de forma linear */
+    background-image: linear-gradient(to bottom, #062d14, black);
+}
+
+.main__text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main__link:hover{
+    text-decoration: underline;
+}
