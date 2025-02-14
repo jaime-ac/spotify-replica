@@ -1,0 +1,22 @@
+/* Item list */
+.item-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.item-list__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-list__link:hover{
+    text-decoration: underline;
+}
+
+.item-list__container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+

@@ -1,0 +1,92 @@
+
+ANOTAÇÕES - Jornada Full Stack - Hashtag Programação - Criando réplica do Spotify:
+
+NOMENCLATURAS:
+	=> componentes => devemos usar o PascalCase: primeira letra sempre maíuscula;
+	=> variáveis, funções, ... => usamos o camelCase: primeira letra em minúscula e a próxima palavra começa com maíuscula, tipo a corcunda do camelo;
+
+*Atalho para abrir uma nova pasta no VsCode => Ctrl + K Ctrl + O*
+
+*Atalho para criar uma estrutura de um componente => rfce*
+
+*Atalho para criar uma estrutura de um arrow componente => rafce*
+
+Obs.: toda vez que você baixar um novo projeto para trabalhar, ele vai vir sem o pacote "node_modules". Este pacote carrega todas as dependências que o projeto precisa para funcionar, então ao baixar um projeto, antes de começar a trabalhar nele você deve abrir o terminal e digitar "npm install ou npm i" para instalar as dependências que o projeto precisa para rodar e funcionar bem.
+
+Como criar um projeto a partir do terminal: 
+	"npm create vite@latest ." => crie um novo projeto (você tem que nomear o projeto na sequência, assim como escolher as ferramentas que vai usar);
+	"cd <nome do projeto> => muda de diretório para o projeto criado;
+	"npm install" => instala as dependências que o projeto precisa para rodar e funcionar na web;
+	"npm run dev" => roda o projeto.
+	
+Obs.: todo "componente" em react é uma função que pode ser utilizada e reutilizada quando é necessário;
+
+EXPORTAÇÕES DE COMPONENTES OU ELEMENTOS:
+	=> export default: eu posso importar o elemento em outro lugar com qualquer nome e sem as chaves {};
+	=> export 'sem' default: eu devo importar o elemento exatamente com o nome que ele foi nomeado para exportação e deve ser entre chaves {nome};
+
+RESETS:
+	toda vez que a gente começa um projeto do zero fazendo o reset, devemos usar o seletor universal *{} para estilizar o básico da nossa página. Para isso, definimos a margin, padding, box-sizing no arquivo index.css, dessa forma:
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	};
+
+POSIÇÃO DOS ELEMENTOS:
+	toda vez que tenho um elemento com position: absolute; preciso ter o seu elemento pai com position:relative;
+	opacity: 0; => faz o elemento sumir;
+
+OPERADOR TERNÁRIO:
+    if()            (? se for verdadeiro)    executar         (: se for falso)             executar
+    {<condição>               ?             <comando>                  :                   <comando>};
+
+    Ex.: {items === 5 ? (
+                <>
+                    <SingleItem />
+                    <SingleItem />
+                    <SingleItem />
+                    <SingleItem />
+                    <SingleItem />
+                </>
+                ):
+                <>
+                    <SingleItem />
+                    <SingleItem />
+                    <SingleItem />
+                    <SingleItem />
+                    <SingleItem />
+                    <SingleItem />
+                    <SingleItem />
+                    <SingleItem />
+                    <SingleItem />
+                    <SingleItem />
+                </>
+            }
+
+ARRAY.MAP => COMO FUNCIONA:
+
+    array(<item>).fill.map(() => (
+        console.log('Sou eu')
+    ));
+     => o .fill serve para preencher o espaço vazio de um array que está sendo manipulado.
+     => o .map é tipo uma estrutura de repetição, onde ele pega cada elemento de um array ou object e faz alguma operação que a gente para na execução (segundo parêntese); logo, ele devolve tudo que estiver dentro do array em formato de outra lista, seguindo o parâmetro que estabelemos no argumento .map((<argumento)). Em resumo tenho: <vetor>.map((<argumento) => (comando a ser executado));
+     Ex.:
+        {Array(items).fill().map((currentValue, index) => (<SingleItem key={`${title}-${index}`}/>))}
+        => pegar o valor das props:
+        // id={currentObj.id}
+        // name={currentObj.name}
+        // image={currentObj.image}
+        // banner={currentObj.banner}
+
+SPREAD OPERATOR
+    <[...<array>]> => o spread operator serve para criar uma cópia de um vetor
+
+PROPS:
+    {artist === undefined ? 'Artista' : artist} => isso quer dizer que se o props foi passado para ele mostrar o valor dele, caso contrário ele deve mostrar a palavra 'Artista' no lugar;
+
+    {artits ?? 'Artista} => é uma forma mais resumida de fazer a estrutura de condição acima. As ?? significam que se tiver um artista para ele usar aquele artista mesmo, caso contrário, se o artista for null ou undefined ele deve usar a palavra reservada 'Artista';
+
+path => significa caminho, ou seja, o lugar onde devo ser encaminhado quando clico em algum elemento;
+
+npm i react-router-dom => serve para instalar as rotas que podemos usar no react;
